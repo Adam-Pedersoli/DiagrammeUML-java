@@ -14,7 +14,7 @@ public class LblIconFleche extends JLabel
     
     public LblIconFleche()
     {
-        CompOutils.setBackgroundWhite( this );
+        StyleOutils.setBackgroundWhite( this );
         this.setIconFlecheBas();
     }
 

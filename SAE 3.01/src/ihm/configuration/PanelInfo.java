@@ -2,7 +2,7 @@ package src.ihm.configuration;
 
 import javax.swing.*;
 
-import src.ihm.CompOutils;
+import src.ihm.StyleOutils;
 
 import java.awt.*;
 
@@ -10,7 +10,7 @@ public class PanelInfo extends JPanel
 {
     public PanelInfo()
     {
-        CompOutils.setBackgroundWhite( this );
+        StyleOutils.setBackgroundWhite( this );
         this.setLayout(new GridBagLayout());
         this.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 

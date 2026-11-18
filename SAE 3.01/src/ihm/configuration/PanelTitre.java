@@ -3,13 +3,13 @@ package src.ihm.configuration;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import src.ihm.CompOutils;
+import src.ihm.StyleOutils;
 
 public class PanelTitre extends JPanel
 {
     public PanelTitre()
     {
-        CompOutils.setBackgroundWhite( this );
+        StyleOutils.setBackgroundWhite( this );
         JLabel lblTitre;
         /*-------------------------*/
         // Creation des composants //

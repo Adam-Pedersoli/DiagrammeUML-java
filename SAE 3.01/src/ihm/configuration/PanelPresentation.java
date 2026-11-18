@@ -1,20 +1,17 @@
 package src.ihm.configuration;
 
-import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import src.ihm.CompOutils;
-import src.ihm.LblIconFleche;
+import src.ihm.StyleOutils;
 
 import java.awt.FlowLayout;
 import java.awt.Component;
 
 
 import java.awt.Dimension;
-import java.awt.Color;
 import java.awt.Image;
 
 public class PanelPresentation extends JPanel
@@ -25,7 +22,7 @@ public class PanelPresentation extends JPanel
 
     public PanelPresentation()
     {
-        CompOutils.setBackgroundWhite( this );
+        StyleOutils.setBackgroundWhite( this );
         this.setLayout( new FlowLayout() );
         this.setPreferredSize(new Dimension(300, 100));
         this.setMinimumSize(new Dimension(300, 100));
