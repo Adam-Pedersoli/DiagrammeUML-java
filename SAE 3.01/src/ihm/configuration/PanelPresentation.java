@@ -22,7 +22,7 @@ public class PanelPresentation extends JPanel
 
     public PanelPresentation()
     {
-        StyleOutils.setBackgroundWhite( this );
+        StyleOutils.setBackground( this, null );
         this.setLayout( new FlowLayout() );
         this.setPreferredSize(new Dimension(300, 100));
         this.setMinimumSize(new Dimension(300, 100));

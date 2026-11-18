@@ -5,6 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.JScrollPane;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -15,9 +16,9 @@ import java.awt.Font;
 
 public class StyleOutils 
 {
-    public static void setBackgroundWhite( JComponent comp )
+    public static void setBackground( JComponent comp, Color color )
     {
-        comp.setBackground( Color.WHITE );
+        comp.setBackground( color == null ? Color.WHITE : color );
         comp.setOpaque( true );
     }    
 
@@ -41,11 +42,20 @@ public class StyleOutils
         );
 
         g2.setColor( comp.getBackground() );
-        g2.fillRoundRect( 0, 0, comp.getWidth(), comp.getHeight(), 20, 20 );
+        g2.fillRoundRect( 0, 0, comp.getWidth(), comp.getHeight(), 15, 15 );
 
         g2.dispose();
     }
-    
+
+    public static void addStyleScrollPane( JScrollPane sp )
+    {
+        sp.setBorder( null );
+        sp.setBackground( null );
+        sp.getViewport().setBackground(null);
+        sp.setViewportBorder( BorderFactory.createEmptyBorder(0, 0, 0, 10) );
+        sp.setWheelScrollingEnabled(true);
+        sp.getVerticalScrollBar().setUnitIncrement(2);
+    }
 
     public static void removeStyleBtn( JButton btn )
     {

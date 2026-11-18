@@ -9,7 +9,7 @@ public class PanelTitre extends JPanel
 {
     public PanelTitre()
     {
-        StyleOutils.setBackgroundWhite( this );
+        StyleOutils.setBackground( this, null );
         JLabel lblTitre;
         /*-------------------------*/
         // Creation des composants //

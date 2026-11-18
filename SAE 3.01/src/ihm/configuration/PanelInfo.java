@@ -10,7 +10,7 @@ public class PanelInfo extends JPanel
 {
     public PanelInfo()
     {
-        StyleOutils.setBackgroundWhite( this );
+        StyleOutils.setBackground( this, null );
         this.setLayout(new GridBagLayout());
         this.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
@@ -59,5 +59,7 @@ public class PanelInfo extends JPanel
         // Case à cocher
         gbc.gridy = 3;
         this.add(chkAbstraite, gbc);
+
+        this.setMaximumSize( new Dimension( Integer.MAX_VALUE, this.getMinimumSize().height ) );
     }
 }

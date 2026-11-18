@@ -3,6 +3,9 @@ package src.ihm.configuration.panelMembre;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import java.awt.Dimension;
+import java.awt.Component;
+
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.BoxLayout;
@@ -17,88 +20,76 @@ import src.ihm.configuration.btnMembre.BtnMembre;
 public class PanelMembre extends JPanel implements ActionListener
 {
     protected PanelConfiguration panelConfiguration;
+    protected BtnAcceuil btnAcceuil;
+    protected boolean estActif;
 
-    protected BtnAcceuil         btnAcceuil;
-    protected boolean            estActif;
+    private PanelMembres panelMembres;
+    private JScrollPane spMembres;
 
-    private   PanelMembres       panelMembres;
-    private   JScrollPane        spMembres;
+    protected JButton btnAddMembre;
 
-    protected JButton            btnAddMembre;
-
-    protected PanelMembre( PanelConfiguration panelConfiguration )
+    protected PanelMembre(PanelConfiguration panelConfiguration)
     {
         this.panelConfiguration = panelConfiguration;
-        this.estActif = true;
-        this.spMembres = null;
+        this.estActif = false;
 
-        StyleOutils.setBackgroundWhite( this );
-        this.setLayout( new BoxLayout(this, BoxLayout.Y_AXIS) );
-        
-        /*-------------------------*/
-        // Creation des composants //
-        /*-------------------------*/
+        StyleOutils.setBackground( this, null );
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setMinimumSize(new Dimension( Integer.MAX_VALUE, 150 ));
+        this.setMaximumSize(new Dimension( Integer.MAX_VALUE, 500 ) );
+        this.setAlignmentX(Component.LEFT_ALIGNMENT);
+
         this.panelMembres = new PanelMembres();
         this.btnAddMembre = new JButton();
-        StyleOutils.addStyleBtnAdd( this.btnAddMembre );
 
-        /*-------------------------------*/
-        // Positionnement des composants //
-        /*-------------------------------*/
-        this.add( panelMembres );
-        this.add( btnAddMembre );
 
-        /*---------------------------*/
-        // Activation des composants //
-        /*---------------------------*/
+        this.spMembres = new JScrollPane(this.panelMembres);
+        StyleOutils.addStyleScrollPane(this.spMembres);
+
+        StyleOutils.addStyleBtnAdd(this.btnAddMembre);
+
+        this.add(this.spMembres);
+        this.add(this.btnAddMembre);
+
         this.btnAddMembre.addActionListener(this);
     }
 
-    public void addMembre( BtnMembre btnMembre )
-    {  
+    public void addMembre(BtnMembre btnMembre)
+    {
         this.panelMembres.addMembre(btnMembre);
-                
-
-        if (this.panelMembres.getTaille() > 3 && this.spMembres == null)
-        {
-            this.spMembres = new JScrollPane(this.panelMembres);
-
-            this.remove(this.panelMembres);
-            this.add(this.spMembres, 1);
-        }
-
-        this.btnAcceuil.setTxtNb( this.panelMembres.getTaille() );
-
-        this.revalidate();
-        this.repaint();
+        this.btnAcceuil.setTxtNb(this.panelMembres.getTaille());
     }
 
     public void actionPerformed(ActionEvent e)
     {
-        if ( e.getSource() == this.btnAcceuil )
-            this.setAttributsVisible( ! this.estActif );
+        if (e.getSource() == this.btnAcceuil)
+            this.setAttributsVisible(!this.estActif);
     }
 
-    protected void setAttributsVisible( boolean isVisible )
+    protected void setAttributsVisible(boolean isVisible)
     {
         this.estActif = isVisible;
-        if ( this.estActif )
+
+        if (this.estActif)
         {
-            if ( this.spMembres != null )
-                this.add( this.spMembres, 1 );
-            else
-                this.add( this.panelMembres, 1 );
+            if (this.spMembres != null)
+                this.add(this.spMembres, 1);
+
+            this.setMinimumSize(new Dimension( Integer.MAX_VALUE, 150 ));
+            this.setMaximumSize(new Dimension( Integer.MAX_VALUE, 500 ) );
             this.btnAcceuil.setIconFlecheBas();
         }
         else
         {
-            if ( this.spMembres != null )
-                this.remove( this.spMembres );
-            else
-                this.remove( this.panelMembres );
+            if (this.spMembres != null)
+                this.remove(this.spMembres);
+
+            this.setMinimumSize(new Dimension( Integer.MAX_VALUE, 100 ));
+            this.setMaximumSize(new Dimension( Integer.MAX_VALUE, 100 ) );
             this.btnAcceuil.setIconFlecheGauche();
         }
-    this.revalidate();
-    this.repaint();
+
+        this.revalidate();
+        this.repaint();
     }
 }

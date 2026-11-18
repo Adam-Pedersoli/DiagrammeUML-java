@@ -24,6 +24,8 @@ public class PanelMethode extends PanelMembre
         this.add( btnAcceuil, 0 );
 
         this.btnAcceuil.addActionListener(this);
+
+        super.setAttributsVisible(!this.estActif);
     }
 
     public void addMethode()

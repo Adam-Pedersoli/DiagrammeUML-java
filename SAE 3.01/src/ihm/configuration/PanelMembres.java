@@ -18,9 +18,9 @@ public class PanelMembres extends JPanel
     {
         this.lstBtnMembre = new ArrayList<BtnMembre>();
         
-        StyleOutils.setBackgroundWhite(this);
+        StyleOutils.setBackground(this, null);
 
-        this.setLayout( new GridLayout( 0, 1 ) );
+        this.setLayout( new GridLayout( 0, 1, 0, 5 ) );
     }
 
     public int  getTaille()

@@ -2,7 +2,6 @@ package src.ihm.configuration;
 
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 import src.ihm.StyleOutils;
 import src.ihm.Frame;
@@ -10,6 +9,7 @@ import src.ihm.configuration.panelMembre.PanelAttribut;
 import src.ihm.configuration.panelMembre.PanelMethode;
 
 import java.awt.Component;
+import java.awt.Dimension;
 
 public class PanelConfiguration extends JPanel
 {
@@ -25,7 +25,7 @@ public class PanelConfiguration extends JPanel
     {
         this.frame = frame;
 
-        StyleOutils.setBackgroundWhite( this );
+        StyleOutils.setBackground( this, null );
         this.setLayout( new BoxLayout(this, BoxLayout.Y_AXIS) );
         this.setAlignmentX( Component.LEFT_ALIGNMENT );
 
@@ -53,5 +53,7 @@ public class PanelConfiguration extends JPanel
         this.add( this.panelInfo );
         this.add( this.panelAttribut );
         this.add( this.panelMethode );
+
+        this.setPreferredSize( new Dimension( 400, Integer.MAX_VALUE ) );
     }
 }

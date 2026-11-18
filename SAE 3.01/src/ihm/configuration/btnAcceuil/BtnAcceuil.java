@@ -16,7 +16,7 @@ public abstract class BtnAcceuil extends JButton
 
     protected BtnAcceuil()
     {
-        StyleOutils.setBackgroundWhite( this );
+        StyleOutils.setBackground( this, null );
 
         this.setLayout( new FlowLayout( FlowLayout.LEFT ) );
 
@@ -25,10 +25,10 @@ public abstract class BtnAcceuil extends JButton
         /*-------------------------*/
         this.lblIconFleche = new LblIconFleche();
 
-        this.lblTitre = new JLabel( "Attribut" );
+        this.lblTitre = new JLabel( "" );
         StyleOutils.addStyleTxtBold( this.lblTitre );
 
-        this.lblNbAttribut = new JLabel("0");
+        this.lblNbAttribut = new JLabel("");
         StyleOutils.addStyleTxtGray( this.lblNbAttribut );
 
         /*-------------------------------*/

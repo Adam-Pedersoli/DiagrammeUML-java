@@ -3,6 +3,7 @@ package src.ihm;
 import src.Controleur;
 import src.ihm.classe.BtnClasse;
 import src.ihm.configuration.PanelConfiguration;
+import src.ihm.menu_bar.PanelMenuBar;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
