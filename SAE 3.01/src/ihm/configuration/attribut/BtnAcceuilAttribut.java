@@ -9,6 +9,7 @@ import javax.swing.SwingConstants;
 
 import src.ihm.CompOutils;
 import src.ihm.LblIconFleche;
+import src.ihm.StyleOutils;
 import src.ihm.configuration.PanelAttribut;
 
 public class BtnAcceuilAttribut extends JButton
@@ -32,10 +33,10 @@ public class BtnAcceuilAttribut extends JButton
         this.lblIconFleche = new LblIconFleche();
 
         lblTitre = new JLabel( "Attribut" );
-        this.panelAttribut.addStyleTxtBold( lblTitre );
+        StyleOutils.addStyleTxtBold( lblTitre );
 
         this.lblNbAttribut = new JLabel("0");
-        this.panelAttribut.addStyleTxtGray( this.lblNbAttribut );
+        StyleOutils.addStyleTxtGray( this.lblNbAttribut );
 
         /*-------------------------------*/
         // Positionnement des composants //

@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import src.ihm.StyleOutils;
@@ -37,9 +38,16 @@ public class PanelMembres extends JPanel
     {  
         this.lstBtnMembre.add( btnMembre );
         
+        btnMembre.setPanelMembres( this );
         this.add( btnMembre );
     
         this.revalidate();
         this.repaint();
+    }
+
+    public void setActivBtn( JButton btn )
+    {
+        for ( BtnMembre btnMembre : this.lstBtnMembre )
+            btnMembre.btnActif( btn == btnMembre.getBtn() );
     }
 }

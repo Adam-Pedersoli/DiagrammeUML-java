@@ -28,7 +28,7 @@ public class PanelInfo extends JPanel
         JLabel lblVisibilite = new JLabel("Visibilité");
         JComboBox<String> cmbVisibilite = new JComboBox<>(new String[]{"Public", "Private", "Protected"});
 
-        JCheckBox chkAbstraite = new JCheckBox("Classe abstraite");
+        JCheckBox chkAbstraite = new JCheckBox("Abstraite");
 
         // Colonne des labels
         gbc.gridx = 0;

@@ -8,7 +8,6 @@ import java.io.File;
 
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.JDOMException;
-import org.jdom2.Document;
 import org.jdom2.Element;
 
 import src.metier.ConstanteEnum;

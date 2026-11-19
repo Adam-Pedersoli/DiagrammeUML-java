@@ -22,7 +22,7 @@ public class PanelMenuBar extends JPanel implements ActionListener
     {
         this.frame = frame;
 
-        StyleOutils.setBackgroundWhite( this );
+        StyleOutils.setBackground( this, null );
         
         StyleOutils.addStyleBorder( this, 1, 1, 0, 1 );
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 15, 15));

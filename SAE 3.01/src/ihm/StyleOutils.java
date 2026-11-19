@@ -47,6 +47,11 @@ public class StyleOutils
         g2.dispose();
     }
 
+    public static void addStyleSelect( JButton btn )
+    {
+        btn.setBackground( new Color( 199, 209, 255 ) );
+    }
+
     public static void addStyleScrollPane( JScrollPane sp )
     {
         sp.setBorder( null );

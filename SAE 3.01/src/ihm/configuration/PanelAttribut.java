@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import src.ihm.CompOutils;
+import src.ihm.StyleOutils;
 import src.ihm.configuration.attribut.BtnAcceuilAttribut;
 import src.ihm.configuration.attribut.BtnAttribut;
 
@@ -40,10 +41,10 @@ public class PanelAttribut extends JPanel implements ActionListener
         // Creation des composants //
         /*-------------------------*/
         this.btnAcceuilAttribut = new BtnAcceuilAttribut( this );
-        this.panelConfiguration.removeStyleBtn( this.btnAcceuilAttribut );
+        StyleOutils.removeStyleBtn( this.btnAcceuilAttribut );
 
         this.btnAddAttribut     = new JButton("+ Ajouter un attribut");
-        this.panelConfiguration.addStyleBtnAdd( this.btnAddAttribut );
+        StyleOutils.addStyleBtnAdd( this.btnAddAttribut );
 
         /*-------------------------------*/
         // Positionnement des composants //
@@ -60,7 +61,7 @@ public class PanelAttribut extends JPanel implements ActionListener
 
     public void addAttribut()
     {
-        BtnAttribut btnAttribut = new BtnAttribut();
+        BtnAttribut btnAttribut = new BtnAttribut(  );
         this.lstAttributs.add( btnAttribut );
         this.add( btnAttribut, this.lstAttributs.size() );
 
@@ -100,14 +101,5 @@ public class PanelAttribut extends JPanel implements ActionListener
         this.repaint();
     }
 
-    public void addStyleTxtBold( JLabel lbl )
-    {
-        this.panelConfiguration.addStyleTxtBold( lbl );;
-    }
-
-    public void addStyleTxtGray( JLabel lbl )
-    {
-        this.panelConfiguration.addStyleTxtGray( lbl );
-    }
 
 }

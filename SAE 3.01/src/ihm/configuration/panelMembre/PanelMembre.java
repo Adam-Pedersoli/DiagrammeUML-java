@@ -42,7 +42,6 @@ public class PanelMembre extends JPanel implements ActionListener
         this.panelMembres = new PanelMembres();
         this.btnAddMembre = new JButton();
 
-
         this.spMembres = new JScrollPane(this.panelMembres);
         StyleOutils.addStyleScrollPane(this.spMembres);
 
